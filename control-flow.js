@@ -64,13 +64,85 @@
 //     i++
 // }
 
-const secretNumber = Math.round(Math.random() * 10);
+// const secretNumber = Math.round(Math.random() * 10);
 
 
-while (true) {
-    const guessedString = prompt("indovina il numero che sto pensando")
-    const guessedNumber = parseInt(guessedString)
-    if (guessedNumber === secretNumber) {
-        alert("bravo")
-    } else { "schiappa" }
-}
+// while (true) {
+//     const guessedString = prompt("indovina il numero che sto pensando")
+//     const guessedNumber = parseInt(guessedString)
+//     if (guessedNumber === secretNumber) {
+//         alert("bravo")
+//     } else { "schiappa" }
+// }
+
+// let startingString = '';
+// while (startingString.length < 10) {
+//     startingString = startingString + '*'
+// }
+// console.log(startingString);
+
+
+//do...while  esegue il codice almeno una volta prima di entrare nel ciclo
+// const pluto = 20;
+
+// while (pippo > pluto) {
+//     console.log('sono entrato!')
+// }
+
+// do {
+//     console.log('sono entrato! nel ... do while')
+// } while (pippo > pluto);
+
+
+
+//FOR
+// for (let i = 0; i < 10; i++) {
+//     console.log('sono nel ciclo for e sto facendo il giro ' + i)
+// }
+
+
+// let startingString = ""
+// for (; ;) {
+//     startingString += '°'
+//     if (startingString.length === 10) {
+//         break;
+//     }
+
+// }
+// console.log(startingString)
+
+// for (let y = 0; y <= 3; y++) {
+//     let row = ''
+//     for (let x = 0; x <= 3; x++) {
+//         row += `(x: ${x}, y: ${y})`
+//     }
+//     console.log(row)
+// }
+
+
+
+//SWITCH gestire scelte multiple molto lunghe
+
+// const ageString = prompt('in che anno sei nato?')
+
+// switch (ageString) {
+//     case "1978":
+//         alert("sei nato nel mio stesso anno");
+//         break;
+
+//     case "1990":
+//         alert("sei naato nell'anno dei mondiali");
+//         break;
+
+//     case "1984":
+//         alert("l'anno mio");
+//         break;
+
+//     case "1990":
+//         alert("prima elementare");
+//         break;
+
+//     default:
+//         alert("che anno noioso");
+//         break;
+// }
