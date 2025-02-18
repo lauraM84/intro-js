@@ -59,7 +59,9 @@
 
 //grid chessbox 8x8
 
-let chessboard = ""
-for (let row = 0; row < 8; row++) {
 
+
+//usando un ciclo logga i numeri da 100 a -100
+for (let i = 100; i >= -100; i--) { //i parte da 100, faccio decrementare di uno (i--) fino a che non arrivo a -100 (>=100)
+    console.log(i);
 }
