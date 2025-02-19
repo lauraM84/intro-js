@@ -32,7 +32,6 @@
 //     startingString=startingString + "#\n";
 //
 
-
 // }
 // console.log(startingString)
 
@@ -58,10 +57,20 @@
 // }
 
 //grid chessbox 8x8
+// let chessbox = "";
+// for (let y = 0; y < 8; y++) {
+//     if (y % 2 === 0) {
+//         chessbox += " # # # #\n";
+//     } else {
+//         chessbox += "# # # # \n";
+//     }
+// }
+// console.log(chessbox)
 
 
 
-//usando un ciclo logga i numeri da 100 a -100
-for (let i = 100; i >= -100; i--) { //i parte da 100, faccio decrementare di uno (i--) fino a che non arrivo a -100 (>=100)
-    console.log(i);
-}
+
+// //usando un ciclo logga i numeri da 100 a -100
+// for (let i = 100; i >= -100; i--) { //i parte da 100, faccio decrementare di uno (i--) fino a che non arrivo a -100 (>=100)
+//     console.log(i);
+// }
