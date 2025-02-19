@@ -97,3 +97,64 @@ sayHelloTo3('laura')
 
 
 //clojure
+// function createCallTwice(name) {
+//     const call = name + ',' + ' ' + name + '!'
+
+//     const callFunction = () => console.log(call)
+
+//     return callFunction;
+// }
+
+// const callTwice = createCallTwice('andrea');
+
+// callTwice()
+
+
+// function createMultiplicator(number) {
+//     const multiplicatorFunction = function (numberToMultiply) {
+//         return numberToMultiply * number;
+//     }
+
+//     return multiplicatorFunction;
+// }
+
+// const multiplicatorX2 = createMultiplicator(2);
+// const multiplicatorX3 = createMultiplicator(3);
+
+// console.log(multiplicatorX2(10))
+// console.log(multiplicatorX2(13))
+
+// console.log(multiplicatorX3(10))
+// console.log(multiplicatorX3(13))
+
+
+// function createCounter() {
+//     let counter = 0;
+
+//     const incrementFunction = function () {
+//         counter++;
+//         return counter;
+//     }
+
+//     return incrementFunction;
+// }
+
+// const increment = createCounter();
+
+// console.log(increment());
+// console.log(increment());
+// console.log(increment());
+// console.log(increment());
+
+
+
+//recursion
+function fact(number) {
+    if (number === 0) {
+        return 1;
+    } else {
+        return number * fact(number - 1);
+    }
+}
+console.log(fact(5));
+console.log(fact(6));
