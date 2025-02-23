@@ -196,6 +196,16 @@ console.log('es 10', StringWithoutVowels)
 const array3 = [[1, 2, 3], [3, 2, 1, 0], [0, 0, 0, 0, 0]];
 
 //12) restituire un array di numeri che sono le lunghezze dei singoli array
+function lengthOfArrays(values) {
+    let result = []
+    for (let i = 0; i < values.length; i++) {
+        const element = values[i];
+        const lengthOfSingleArray = element.length
+        result.push(lengthOfSingleArray)
+    }
+    return result;
+}
+console.log("es 12", lengthOfArrays(array3))
 //13) sommare tutti i numeri in tutti gli array
 
 const sumAllNumbers = arrayToReduce => {
@@ -213,4 +223,15 @@ console.log('es 13', resultSummAllNumbers)
 
 
 //14) sommare tutte le lunghezze degli array
+function sumOfLengthOfArrays(values) {
+    let result = 0
+    for (let i = 0; i < values.length; i++) {
+        const element = values[i];
+        result = result + element.length
+    }
+    return result;
+}
+console.log("es 14", sumOfLengthOfArrays(array3))
+
+
 //15) sommare tutti i numeri con l'indice uguale e restituire un array di risultati
