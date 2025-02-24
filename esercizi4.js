@@ -85,12 +85,12 @@ const currentYear = 2025
 function avgAge(arrayOfStudents) {
     let sumOfAges = 0
 
-    arrayOfStudents.forEach(element => {
+    arrayOfStudents.forEach(element => {      //element=student
         let age = currentYear - element.yob
         sumOfAges = sumOfAges + age
     });
 
-    let avgAge = sumOfAges / arrayOfStudents.length
+    let avgAge = sumOfAges / arrayOfStudents.length  //usare const invece di let
     return avgAge
 }
 
@@ -104,7 +104,7 @@ function nameSurname(students) {
     let allData = []
 
     students.forEach(element => {
-        let data = element.name + "/" + element.surname
+        const data = element.name + "/" + element.surname
         allData.push(data);
 
     });
@@ -162,10 +162,10 @@ function groupByNationality(students) {
     const groupBy = {};
     students.forEach(element => {
         const nationality = element.nationality;
-        if (groupBy[nationality] == undefined) {
+        if (groupBy[nationality] === undefined) {
             groupBy[nationality] = []
         }
-        groupBy[nationality].push(element)
+        groupBy[nationality].push(element.name)
     });
     return groupBy
 }
