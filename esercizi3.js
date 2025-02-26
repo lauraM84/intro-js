@@ -129,6 +129,20 @@ console.log('es 5', namesGreaterThan4)
 
 
 //6) trasforamre tutte le stringhe in maiscolo
+function arraytoUpper(stringArray) {
+    const newArray = [];
+    for (let i = 0; i < stringArray.length; i++) {
+        const element = stringArray[i];
+        const upperString = element.toUpperCase() // toUpperCase(elemnt)
+        newArray.push(upperString) // push(newArray, emptyString)
+    }
+    return newArray;
+}
+
+const uArray = arraytoUpper(array2);
+
+console.log('es 6', uArray);
+
 //7) mettere Solo le Iniziali in maiuscolo
 
 function initialsUpper(array) {
