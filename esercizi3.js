@@ -1,5 +1,20 @@
 const array1 = [23, 14, 56, 44, 3, 0, -1, 55, -12, 60, 8];
 
+function nomeFunzione(param1, param2, param3) {
+    console.log(param1, param2, param3)
+}
+
+function somma(a, b) {
+    return a + b;
+}
+
+
+const somma1 = somma(2, 3)
+const somma2 = somma(5, 4)
+console.log(somma)
+
+
+
 //1) filtrare tutti i numeri < o = a zero
 
 function negativeNumberAndZero(arrayOfNumbers) {
