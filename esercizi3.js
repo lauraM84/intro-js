@@ -264,3 +264,24 @@ console.log("es 14", sumOfLengthOfArrays(array3))
 
 
 //15) sommare tutti i numeri con l'indice uguale e restituire un array di risultati
+function sumAllEqualIndex(arrayOfArrays) {
+    const parkingArray = []
+
+    for (let i = 0; i < arrayOfArrays.length; i++) {
+        const array = arrayOfArrays[i];
+        for (let j = 0; j < array.length; j++) {
+            const number = array[j];
+            if (parkingArray[j]) {
+                parkingArray[j] += number
+            } else {
+                parkingArray[j] = number
+            }
+
+        }
+
+    }
+    return parkingArray
+}
+
+
+console.log(sumAllEqualIndex(array3))

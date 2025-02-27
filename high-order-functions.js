@@ -179,7 +179,7 @@ console.log('keep odd index', newArray15); */
 
 
 //////////REDUCE
-function sumAll(arrayOfNumbers) {
+/* function sumAll(arrayOfNumbers) {
     let accoumulator = 0;
 
     for (let i = 0; i < arrayOfNumbers.length; i++) {
@@ -269,4 +269,65 @@ function capitalizeFirstChar(str) {
 
 
 const stopazzo3 = testArray2.filter(isOdd)
-    .map(capitalizeFirstChar);
+    .map(capitalizeFirstChar); */
+
+
+
+///////////FIND
+
+function isEven(nbr) {
+    /* if (nbr % 2 === 0) {
+        return true;
+    } else {
+        return false
+    } */
+    return nbr % 2 === 0;
+}
+
+console.log(testArray.filter(isEven))
+console.log(testArray.find(isEven))   //si ferma al primo  valore che soddisfa la richiesta
+
+/////////SOME
+console.log(testArray.some(isEven))   //risponde alla richiesta di condizione (true o false)
+
+/////////EVERY
+console.log(testArray.every(isEven)) //risponde al "tutti sono pari?" (quindi se la condizione è valida per tutti i parametri)
+
+/////////SORT
+function sortingFunction(first, second) {
+    if (first < second) {
+        return 1;
+    } else if (first > second) {
+        return -1
+    } else {
+        return 0
+    }
+
+}
+
+testArray.sort(sortingFunction)
+
+console.log(testArray)
+
+//numeri in ordine crescente
+testArray.sort((f, s) => f - s)
+console.log(testArray)
+
+//numeri in ordine decrescente
+testArray.sort((f, s) => s - f)
+console.log(testArray)
+
+//dalla A alla Z
+testArray2.sort((fString, sString) => fString.localeCompare(sString))
+console.log(testArray2)
+/////
+function betterSorter(array, sortingFunction) {
+    const newArray = [...array];
+    newArray.sort(sortingFunction);
+    return newArray;
+}
+
+const sortedArray = betterSorter(testArray2, (fString, sString) => fString.localeCompare(sString));
+
+console.log(testArray2)
+console.log(sortedArray)
