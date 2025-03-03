@@ -1,5 +1,15 @@
+//1) aggiungere al toString di tutte le classi gender e nationality
 
-class Human {
+//2) aggiungere a teacher le funzioni: bestStudent e StudentsMean(media delle medie)
+
+//3) aggiungere la classe Principal che erediterà da human e come caratteristiche avrà
+//   un array di teachers
+//   il nome della scula
+
+//4) aggiungere al principal due funzioni: bestTeacher(mediadellemediepiùalte) e bestStudent
+
+
+/* class Human {
     constructor(name, surname, yob, nationality, gender, subject, students = []) {
         this.name = name;
         this.surname = surname;
@@ -180,21 +190,151 @@ const principal = new Principal('Pippo', 'de topolini', '1958', 'top', 'm', 'Ita
 console.log(teacher1.toString());
 console.log(teacher1.bestStudent());
 console.log(teacher1.calculateStudentsMean());
-console.log(principal.toString());
+console.log(principal.toString()); */
 
 
-//1) aggiungere al toString di tutte le classi gender e nationality
-
-
-
-//2) aggiungere a teacher le funzioni: bestStudent e StudentsMean(media delle medie)
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 
-//3) aggiungere la classe Principal che erediterà da human e come caratteristiche avrà
-//   un array di teachers
-//   il nome della scula
+//1)Crea una classe base ContoBancario:
+//-La classe ContoBancario deve avere le seguenti proprietà: titolare (Human) saldo (numero)
+//-La classe ContoBancario deve avere i seguenti metodi:
+//-toString()
+//-deposita(importo): Aggiunge l'importo al saldo.
+//-preleva(importo): Sottrae l'importo dal saldo se ci sono fondi sufficienti, altrimenti stampa un messaggio di errore.
+
+//2)Crea una classe derivata ContoCorrente che eredita da ContoBancario:
+//-La classe ContoCorrente deve avere le seguenti proprietà aggiuntive:
+//-limiteSpesa (numero)
+//-La classe ContoCorrente deve avere i seguenti metodi aggiuntivi:
+//-paga(importo): Sottrae l'importo dal saldo se ci sono fondi sufficienti o se l'importo è entro il limite di spesa, altrimenti stampa un messaggio di errore.
+// se il pagamento va a buon fine il metodo aggiunge al saldo il 2% dell'importo
+
+//3)Crea una classe derivata ContoRisparmio che eredita da ContoBancario:
+//-La classe ContoRisparmio deve avere le seguenti proprietà aggiuntive:
+//-sogliaBonus(numero)
+//-La classe ContoRisparmio deve avere i seguenti metodi aggiuntivi:
+//-applicaBonus(): Aggiunge un bonus del 2% (del saldo) al saldo se il saldo supera la soglia.
+
+class ContoBancario {
+    constructor(holder, balance) {
+        this.holder = holder;
+        this.balance = balance;
+    }
+    toString() {
+        const str = `
+        Titolare:${this.holder}
+        Saldo del conto:${this.balance}`
+        return str;
+    }
+
+    deposit(amount) {
+        this.balance += amount;
+    }
+
+    withdraw(amount) {
+        if (this.balance >= amount) {
+            this.balance -= amount;
+        } else {
+            console.log('saldo insufficiente')
+        }
+    }
+}
+
+class ContoCorrente extends ContoBancario {
+    constructor(holder, balance, spendingLimit) {
+        super(holder, balance);
+        this.spendingLimit = spendingLimit;
+    }
+
+    applyCashback(amount) {
+        this.balance += (amount * 2) / 100;
+    }
+
+    pay(amount) {
+        if (this.balance < amount) {
+            console.log("saldo insufficiente")
+        }
+        else if (amount > this.spendingLimit) {
+            console.log("superato limite di spesa")
+        }
+        else {
+            this.balance -= amount;
+            this.applyCashback(amount);
+        }
+
+    }
+
+    toString() {
+        const str = super.toString() + `
+        Limite di spesa:${this.spendingLimit}
+        `
+        return str;
+    }
+}
+
+class ContoRisparmio extends ContoBancario {
+    constructor(holder, balance, threshold) {
+        super(holder, balance);
+        this.threshold = threshold;
+    }
+
+    applyBonus() {
+        if (this.balance >= this.threshold) {
+            console.log("Bravaaaa")
+            this.balance = this.balance + (this.balance * 2) / 100;
+        } else {
+            console.log("Mi spiace non hai raggiunto il bonus")
+        }
+    }
+
+    toString() {
+        const str = super.toString() + `
+        Soglia bonus:${this.threshold}`
+        return str
+    }
+}
+
+class Human {
+    constructor(name, surname) {
+        this.name = name;
+        this.surname = surname;
+    }
+
+    toString() {
+        const humanStr = `
+        nome:${this.name}
+        cognome:${this.surname}`
+        return humanStr;
+    }
+
+}
+
+const holder1 = new Human('laura', 'mazza');
+const contoBancario1 = new ContoBancario(holder1, 1000);
+const contoCorrente1 = new ContoCorrente(holder1, 1000, 500);
+const contoRisparmio1 = new ContoRisparmio(holder1, 1000, 100)
+
+console.log(contoBancario1.toString());
+
+contoBancario1.deposit(500);
+console.log(contoBancario1.toString());
+
+contoBancario1.withdraw(500);
+console.log(contoBancario1.toString());
+
+console.log(contoCorrente1.toString());
+
+contoCorrente1.pay(600);
+console.log(contoCorrente1.toString());
+contoBancario1.deposit(100)
+contoCorrente1.pay(103);
+console.log(contoCorrente1.toString());
+
+console.log(contoRisparmio1.toString());
+contoRisparmio1.applyBonus()
+console.log(contoRisparmio1.toString());
 
 
 
-//4) aggiungere al principal due funzioni: bestTeacher(mediadellemediepiùalte) e bestStudent
