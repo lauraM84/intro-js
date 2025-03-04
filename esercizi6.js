@@ -217,7 +217,7 @@ console.log(principal.toString()); */
 //-La classe ContoRisparmio deve avere i seguenti metodi aggiuntivi:
 //-applicaBonus(): Aggiunge un bonus del 2% (del saldo) al saldo se il saldo supera la soglia.
 
-class ContoBancario {
+/* class ContoBancario {
     constructor(holder, balance) {
         this.holder = holder;
         this.balance = balance;
@@ -334,7 +334,8 @@ console.log(contoCorrente1.toString());
 
 console.log(contoRisparmio1.toString());
 contoRisparmio1.applyBonus()
-console.log(contoRisparmio1.toString());
+console.log(contoRisparmio1.toString()); */
+
 
 
 
